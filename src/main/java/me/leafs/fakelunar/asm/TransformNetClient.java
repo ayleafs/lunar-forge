@@ -38,8 +38,8 @@ public class TransformNetClient implements IClassTransformer {
 
             String packetHelper = Type.getInternalName(LunarForge.class);
 
-            // inject a method call at the end of the method to LunarForge.sendLC
-            MethodInsnNode insn = new MethodInsnNode(Opcodes.INVOKESTATIC, packetHelper, "registerChannels", Type.getMethodDescriptor(Type.VOID_TYPE));
+            // inject a method call at the end of the method to LunarForge.registerLC
+            MethodInsnNode insn = new MethodInsnNode(Opcodes.INVOKESTATIC, packetHelper, "registerLC", Type.getMethodDescriptor(Type.VOID_TYPE));
 
             // find a RETURN opcode and inject a call to the method
             ListIterator<AbstractInsnNode> iterator = method.instructions.iterator();

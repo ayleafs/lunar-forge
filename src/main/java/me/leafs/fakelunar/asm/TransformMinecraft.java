@@ -31,8 +31,8 @@ public class TransformMinecraft implements IClassTransformer {
 
             String packetHelper = Type.getInternalName(LunarForge.class);
 
-            // inject a method call at the end of the method to LunarForge.registerLC
-            MethodInsnNode insn = new MethodInsnNode(Opcodes.INVOKESTATIC, packetHelper, "registerLC", Type.getMethodDescriptor(Type.VOID_TYPE));
+            // inject a method call at the end of the method to LunarForge.registerEvents (idiot)
+            MethodInsnNode insn = new MethodInsnNode(Opcodes.INVOKESTATIC, packetHelper, "registerEvents", Type.getMethodDescriptor(Type.VOID_TYPE));
             method.instructions.insertBefore(method.instructions.getFirst(), insn);
 
             break;
